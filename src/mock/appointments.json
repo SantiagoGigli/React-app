@@ -1,0 +1,62 @@
+[
+    {
+      "id": 1,
+      "idBuilding": 1,
+      "idBoiler": 1,
+      "date": "22/08/2020",
+      "startTime": "13:00",
+      "endTime": "18::00",
+      "idTechnician": 30,
+      "type": "eventual"
+    },
+    {
+      "id": 2,
+      "idBuilding": 2,
+      "idBoiler": 2,
+      "date": "22/08/2020",
+      "startTime": "10:00",
+      "endTime": "15:00",
+      "idTechnician": 22,
+      "type": "monthly"
+    },
+    {
+      "id": 3,
+      "idBuilding": 3,
+      "idBoiler": 3,
+      "date": "22/03/2020",
+      "startTime": "03:00",
+      "endTime": "10:00",
+      "idTechnician": 2,
+      "type": "eventual"
+    },
+    {
+      "id": 4,
+      "idBuilding": 4,
+      "idBoiler": 4,
+      "date": "15/03/2020",
+      "startTime": "00:00",
+      "endTime": "08:00",
+      "idTechnician": 15,
+      "type": "eventual"
+    },
+    {
+      "id": 5,
+      "idBuilding": 5,
+      "idBoiler": 5,
+      "date": "18/03/2020",
+      "startTime": "18:00",
+      "endTime": "02:00",
+      "idTechnician": 9,
+      "type": "monthly"
+    },
+    {
+      "id": 6,
+      "idBuilding": 6,
+      "idBoiler": 6,
+      "date": "25/11/2020",
+      "startTime": "20:00",
+      "endTime": "23:00",
+      "idTechnician": 11,
+      "type": "eventual"
+    }
+]
