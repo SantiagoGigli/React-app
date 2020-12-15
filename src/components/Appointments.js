@@ -6,7 +6,7 @@ import AddAppointment from './AddAppointment'
 class Appointments extends Component {
   constructor(props){
     super(props);
-    this.state = {appointments}
+    this.state = {appointments, appointment:{}, isEditing: false}
     this.deleteAppointment = this.deleteAppointment.bind(this)
   }
 
@@ -18,9 +18,20 @@ class Appointments extends Component {
   }
 
   deleteAppointment = (id) => {
-    console.log(id)
     const appointmentCopy = [...this.state.appointments];
     this.setState({appointments: appointmentCopy.filter(appointment => appointment.id !== id) });
+  }
+
+  updateAppointment = (id) => {
+    const actualAppointment = this.state.appointments;
+    actualAppointment.map((item) => {
+      if (item.id === id) {
+        return this.setState({
+          appointment:item,
+          isEditing:true
+        })
+      }
+    });
   }
 
   render() {
@@ -39,10 +50,21 @@ class Appointments extends Component {
               <th>date</th>
               <th>type</th>
             </tr>
-            {this.state.appointments.map(appointment => <AppointmentItem key={appointment.id} appointment={appointment} deleteAppointment={this.deleteAppointment}/>)}
+            {
+              this.state.appointments.map(appointment =>
+                <AppointmentItem
+                  key={appointment.id}
+                  appointment={appointment}
+                  deleteAppointment={this.deleteAppointment}
+                  updateAppointment={this.updateAppointment}
+              />)
+            }
           </tbody>
         </table>
-        <AddAppointment addAppointment={this.addAppointment} />
+        <AddAppointment
+        addAppointment={this.addAppointment}
+        isEditing={this.state.isEditing}
+        editedAppointment={this.state.appointment}/>
       </div>
     );
   }
