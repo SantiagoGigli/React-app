@@ -22,17 +22,14 @@ class Appointments extends Component {
     this.setState({appointments: appointmentCopy.filter(appointment => appointment.id !== id) });
   }
 
-  updateAppointment = (id) => {
-    const actualAppointment = this.state.appointments;
-    actualAppointment.map((item) => {
-      if (item.id === id) {
-        return this.setState({
-          appointment:item,
-          isEditing:true
-        })
-      }
-    });
+  updateAppointment = (newItem) => {
+    const appointmentCopy = [...this.state.appointments];
+    const updatedAppointment = appointmentCopy.map(value => {
+      return value.id === newItem.id ? newItem : value
+    })
+    this.setState({...this.state, appointments: updatedAppointment})
   }
+
 
   render() {
     return (
@@ -63,7 +60,6 @@ class Appointments extends Component {
         </table>
         <AddAppointment
         addAppointment={this.addAppointment}
-        isEditing={this.state.isEditing}
         editedAppointment={this.state.appointment}/>
       </div>
     );

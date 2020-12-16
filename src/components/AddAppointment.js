@@ -33,7 +33,6 @@ class AddAppointment extends Component {
   }
 
   render() {
-    const {editedAppointment, isEditing} = this.props
     return (
       <form onSubmit={this.submit}>
         <div id = 'addNewDiv'>
